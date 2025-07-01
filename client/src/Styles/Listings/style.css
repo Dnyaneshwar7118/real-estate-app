@@ -1,0 +1,72 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-wrapper h1 {
+  color: #ffffff;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  outline: none;
+}
+
+.input-wrapper input:hover {
+  box-shadow: 0 4px 15px #ccc;
+}
+
+.listing-container {
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.input-wrapper .select-wrapper {
+  width: 70vh;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none !important;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+.input-wrapper .select-wrapper:hover {
+  box-shadow: 0 4px 15px #ccc;
+}
+
+.property-cards h1 {
+  margin-bottom: 20px;
+}
+
+.property-cards .details-wrapper h3 {
+  text-align: start;
+  width: 10rem;
+}
+
+.property-cards .details-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: start;
+
+}
+
+.property-cards .details-wrapper .existing-details-wrapper {
+  text-align: start;
+  margin-top: 20px;
+  width: 20rem;
+  padding: 12px 30px;
+  color: #6a11cb;
+  background-color: #ffffff;
+}

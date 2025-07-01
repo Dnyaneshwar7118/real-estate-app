@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "u101",
+      "name": "Aarav Mehta",
+      "email": "aarav.mehta92@gmail.com",
+      "password": "Aarav@2025"
+    },
+    {
+      "id": "u102",
+      "name": "Ishita Sharma",
+      "email": "ishita.sharma87@gmail.com",
+      "password": "Ishita#786"
+    },
+    {
+      "id": "u103",
+      "name": "Rajiv Menon",
+      "email": "rajiv.menon01@gmail.com",
+      "password": "RajivSecure@33"
+    },
+    {
+      "id": "u104",
+      "name": "Sneha Kulkarni",
+      "email": "sneha.kulkarni999@gmail.com",
+      "password": "Sneha@Kul99"
+    },
+    {
+      "id": "u105",
+      "name": "Vikram Desai",
+      "email": "vikram.desai321@gmail.com",
+      "password": "Vikram321@!"
+    },
+    {
+      "id": "u106",
+      "name": "Tanvi Joshi",
+      "email": "tanvi.joshi88@gmail.com",
+      "password": "Tanvi#2024"
+    },
+    {
+      "id": "a914",
+      "name": "Dnyaneshwar prabhakar marathe",
+      "email": "dnyanumarathe436@gmail.com",
+      "password": "Dnyanu@7118"
+    }
+  ],
+  "rentProperties": [
+    {
+      "id": "p101",
+      "title": "Modern 2BHK Flat",
+      "city": "Bangalore",
+      "rent": 22000,
+      "type": "2BHK",
+      "description": "Close to IT parks, includes balcony and covered parking"
+    },
+    {
+      "id": "p102",
+      "title": "Studio Apartment",
+      "city": "Hyderabad",
+      "rent": 14000,
+      "type": "Studio",
+      "description": "Compact studio with furnished kitchen, near metro station"
+    },
+    {
+      "id": "p103",
+      "title": "Luxury 3BHK Apartment",
+      "city": "Delhi",
+      "rent": 45000,
+      "type": "3BHK",
+      "description": "Spacious and fully furnished with modern amenities"
+    },
+    {
+      "id": "p104",
+      "title": "Independent House",
+      "city": "Chennai",
+      "rent": 30000,
+      "type": "2BHK",
+      "description": "Ground floor house with backyard and separate gate"
+    },
+    {
+      "id": "p105",
+      "title": "Shared Room in PG",
+      "city": "Pune",
+      "rent": 8000,
+      "type": "Shared",
+      "description": "Girls PG near university, includes food and Wi-Fi"
+    },
+    {
+      "id": "p106",
+      "title": "Villa for Sale",
+      "city": "Ahmedabad",
+      "rent": 5200000,
+      "type": "4BHK",
+      "description": "Beautiful duplex villa for sale in peaceful society"
+    },
+    {
+      "id": "479e",
+      "title": "Compact 1BHK Apartment",
+      "city": "Nagpur",
+      "rent": "12000",
+      "type": "1BHK",
+      "description": "Ideal for working professionals, near metro station."
+    },
+    {
+      "id": "2a84",
+      "title": "Electronics Shop",
+      "city": "Nashik",
+      "rent": "8000",
+      "type": "1BHK",
+      "description": "Ground floor house with backyard and separate gate"
+    }
+  ]
+}
