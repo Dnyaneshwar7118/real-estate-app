@@ -1,34 +1,50 @@
-import axios from "axios";
+import axios from 'axios';
 
-const USER_API = "http://localhost:3000/users";
-const PROPERTY_API = "http://localhost:3000/rentProperties";
+const API = axios.create({ baseURL: 'http://localhost:5000/api' });
 
-// 🔍 Get all users
-export const getAllUsers = async () => {
-  const res = await axios.get(USER_API);
+// Find user by email (Login)
+export const fetchUserByEmail = async (email, password) => {
+  const data = {
+    email,
+    password,
+  };
+  const res = await API.post('/login', data);
+
+  if (res.data.token) {
+    localStorage.setItem('token', res.data.token);
+  }
+
   return res.data;
 };
 
-// 🔍 Find user by email
-export const fetchUserByEmail = async (email) => {
-  const res = await axios.get(`${USER_API}?email=${email}`);
-  return res.data;
-};
-
-// 📝 Register new user
+// Register new user
 export const registerUser = async (data) => {
-  const res = await axios.post(USER_API, data);
+  const res = await API.post('/register', data);
   return res.data;
 };
 
-// 🏠 Add new property
+//  Add new property (Send token manually)
 export const postProperty = async (data) => {
-  const res = await axios.post(PROPERTY_API, data);
+  const token = localStorage.getItem('token');
+
+  const res = await API.post('/properties', data, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
   return res.data;
 };
 
-// 📄 Get all properties
+// Get all properties (Send token manually)
 export const getAllProperties = async () => {
-  const res = await axios.get(PROPERTY_API);
+  const token = localStorage.getItem('token');
+
+  const res = await API.get('/properties', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
   return res.data;
 };

@@ -51,7 +51,9 @@
 
 .property-cards .details-wrapper h3 {
   text-align: start;
-  width: 10rem;
+  width: auto;
+  color: #302e2e;
+  font-size: 18px !important;
 }
 
 .property-cards .details-wrapper {
@@ -65,8 +67,41 @@
 .property-cards .details-wrapper .existing-details-wrapper {
   text-align: start;
   margin-top: 20px;
-  width: 20rem;
-  padding: 12px 30px;
+  width: 35rem;
+  padding: 12px 25px;
   color: #6a11cb;
   background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.existing-details-wrapper .img-wrapper {
+  height: 100px;
+  width: 100px;
+}
+
+.existing-details-wrapper .img-wrapper img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+.delete-wrapper button {
+  background: linear-gradient(135deg, #CBBBF6, #5F4B8B, #302e2e);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  text-align: end;
+  color: #ffffff;
+}
+
+.delete-wrapper button:hover {
+  background: linear-gradient(135deg, #302e2e, #5F4B8B, #CBBBF6);
+
 }

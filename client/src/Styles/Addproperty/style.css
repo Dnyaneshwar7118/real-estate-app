@@ -13,14 +13,74 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 50px;
 }
 
+/* Outer form wrapper */
+.addproperty-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 650px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #CBBBF6, #5F4B8B, #0D0D0D);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading style */
+.addproperty-heading-wrapper {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f9fafb;
+}
+
+.addproperty-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 50px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+/* Label style */
+.addproperty-wrapper label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input, select, and textarea style */
+.form-control {
+  width: 550px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Link below form */
 .link-wrapper {
   text-align: center;
 }
 
 .link-wrapper a {
+  color: #93c5fd;
+  font-weight: 500;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -28,14 +88,28 @@ body {
   text-decoration: underline;
 }
 
-.form-control {
-  width: 70vh;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 2rem;
+/* Submit Button Style */
+.gradient-btn {
+  background: linear-gradient(to right, #0D0D0D, #5F4B8B, #CBBBF6);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.form-control:hover {
-  box-shadow: 0 4px 15px #CBBBF6;
+.gradient-btn:hover {
+  background: linear-gradient(to right, #CBBBF6, #5F4B8B, #0D0D0D);
+  border: 1px solid #CBBBF6;
+}
+
+.w-32 {
+  width: 320px;
+}
+
+.h-32 {
+  height: auto;
 }

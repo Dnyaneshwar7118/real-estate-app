@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { fetchUserByEmail } from '../api/axios';
+
 import '../Styles/Login/style.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [emailExists, setEmailExists] = useState(true);
   const [passwordMatch, setPasswordMatch] = useState(true);
-  const [loading, setLoading] = useState(false); // <-- New loader state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -17,45 +17,37 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loader
+    setLoading(true);
 
     try {
-      const users = await fetchUserByEmail(formData.email);
+      const response = await fetchUserByEmail(formData.email, formData.password);
 
-      if (users.length === 0) {
-        setEmailExists(false);
-        setPasswordMatch(true);
-        setLoading(false); // Hide loader
+      if (!response.token) {
+        setPasswordMatch(false);
+        setLoading(false);
         return;
       }
 
-      setEmailExists(true);
-      const user = users[0];
+      setPasswordMatch(true);
+      setTimeout(() => {
+        alert('Logged in successfully!');
+        navigate('/add-property');
+      }, 3000);
 
-      if (user.password === formData.password) {
-        setPasswordMatch(true);
-        setTimeout(() => {
-          alert('Logged in successfully!');
-          navigate('/add-property');
-        }, 3000); // Delay for effect
-      } else {
-        setPasswordMatch(false);
-        setLoading(false); // Hide loader
-      }
     } catch (error) {
       console.error('Login failed:', error);
       alert('Something went wrong while logging in.');
-      setLoading(false); // Hide loader
+      setLoading(false);
     }
   };
 
   return (
-    <div className="gradient-bg">
-      <form onSubmit={handleSubmit} className="form-card-wrapper">
-        <h2 className="form-title">Welcome Back!</h2>
+    <section className='login-wrapper'>
+      <form onSubmit={handleSubmit} className="login-form-wrapper">
+        <h2 className="login-form-title">Welcome Back!</h2>
 
         <div>
-          <label className="input-label">Email</label>
+          <label className="login-input-wrapper">Email</label>
           <input
             name="email"
             type="email"
@@ -65,15 +57,10 @@ const Login = () => {
             required
             className="form-input"
           />
-          {!emailExists && (
-            <p style={{ color: 'red', fontSize: '0.9rem' }}>
-              Account does not exist.
-            </p>
-          )}
         </div>
 
         <div>
-          <label className="input-label">Password</label>
+          <label className="login-password-wrapper">Password</label>
           <input
             type="password"
             name="password"
@@ -83,9 +70,9 @@ const Login = () => {
             required
             className="form-input"
           />
-          {!passwordMatch && emailExists && (
+          {!passwordMatch && (
             <p style={{ color: 'red', fontSize: '0.9rem' }}>
-              Password does not match.
+              Invalid credentials.
             </p>
           )}
         </div>
@@ -102,7 +89,7 @@ const Login = () => {
           <Link to="/listings">View listings without login</Link>
         </p>
       </form>
-    </div>
+    </section>
   );
 };
 

@@ -1,74 +1,97 @@
-/* Gradient Background */
-.gradient-bg {
-  background: none !important;
-  min-height: 100vh;
-  min-width: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  display: fle;
+/* Outer container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    background: linear-gradient(135deg, #CBBBF6, #5F4B8B, #0D0D0D);
+    padding: 20px;
+    border-radius: 30px;
+
 }
 
-/* Form Container */
-form {
-  width: 100%;
-  max-width: 600px !important;
-  padding: 2.5rem 2rem;
-  background-color: white;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+/* Form wrapper */
+.register-form-wrapper {
+    /* background-color: #ffffff; */
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Heading */
-form h2 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* Input field styles */
+.register-form-wrapper input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Input Wrappers */
-form div {
-  display: flex;
-  flex-direction: column;
+.register-form-wrapper input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-/* Input Fields */
-form input {
-  width: 70vh !important;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
+/* Label styling */
+.register-form-wrapper label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+    display: block;
 }
 
-/* Button */
-.gradient-btn {
-  /* display: inline-block; */
-  width: 70vh;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(to right, #0D0D0D, #5F4B8B, #CBBBF6);
-  color: #ffff;
-  border: none;
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: 0.3s ease;
+/* Button styling */
+.register-gradient-btn-wrapper {
+    background: linear-gradient(to right, #0D0D0D, #5F4B8B, #CBBBF6);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
 }
 
-.gradient-btn:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 15px #CBBBF6;
+.register-gradient-btn-wrapper:hover {
+    background: linear-gradient(to right, #CBBBF6, #5F4B8B, #0D0D0D);
+
 }
 
-/* Bottom text */
-form p {
-  text-align: center;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+/* Login link */
+.register-link {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.register-link a {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Password error */
+.register-form-wrapper p.register-password-wrapper {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.register-heading-wrapper {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #374151;
 }

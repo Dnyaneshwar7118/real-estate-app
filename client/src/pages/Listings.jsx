@@ -1,6 +1,6 @@
-// src/pages/Listings.jsx
 import { useEffect, useState } from 'react';
 import { getAllProperties } from '../api/axios';
+
 import '../Styles/Listings/style.css';
 
 const Listings = () => {
@@ -26,6 +26,8 @@ const Listings = () => {
   }, []);
 
   const filtered = properties.filter((prop) => {
+    console.log("####", prop);
+
     const { city, type, minRent, maxRent } = filters;
     const rent = parseInt(prop.rent, 10);
     const min = parseInt(minRent) || 0;
@@ -48,7 +50,7 @@ const Listings = () => {
 
         {/* Filters */}
         <div className="input-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">Add Property's Details 🏡</h1>
+          <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">Search Property's Details 🏡</h1>
           <input
             name="city"
             placeholder="Search by City"
@@ -80,8 +82,6 @@ const Listings = () => {
             <option value="3BHK">3BHK</option>
           </select>
         </div>
-
-
       </div>
       {/* Property Cards */}
       <div className="property-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -97,12 +97,21 @@ const Listings = () => {
               className="property-card bg-white shadow-md rounded-2xl overflow-hidden border hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02]"
             >
               <div className="p-4 details-wrapper">
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">{p.title || 'No Title'}</h3>
+                {/* <h3 className="text-xl font-semibold text-gray-800 mb-1">{p.title || 'No Title'}</h3> */}
                 <div className="existing-details-wrapper">
-                  <p className="text-gray-600">{p.city} | {p.type}</p>
-                  <p className="text-blue-600 font-bold mt-2 text-lg">₹{p.rent}</p>
-                  <p className="text-gray-500 mt-1">{p.description}</p>
-                  {p.contact && <p className="text-gray-500 mt-1">Contact: {p.contact}</p>}
+                  <div className="img-wrapper">
+                    <img src={`http://localhost:5000${p.imageUrl}`} alt="" />
+                  </div>
+                  <div className="info-wrapper">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1">{p.title || 'No Title'}</h3>
+                    <p className="text-gray-600">{p.city} | {p.type}</p>
+                    <p className="text-blue-600 font-bold mt-2 text-lg">₹{p.rent}</p>
+                    <p className="text-gray-500 mt-1">{p.description}</p>
+                    {p.contact && <p className="text-gray-500 mt-1">Contact: {p.contact}</p>}
+                  </div>
+                  <div className="delete-wrapper">
+                    <button>Delete</button>
+                  </div>
                 </div>
               </div>
             </div>
